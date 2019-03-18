@@ -1,0 +1,17 @@
+{
+  "name": "com.ixortalk.prometheus.faker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
+  },
+  "author": "Davy De Waele <davy.dewaele@ixortalk.com> (https://github.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "node-fetch": "^2.1.2",
+    "prom-client": "^10.0.2"
+  }
+}
