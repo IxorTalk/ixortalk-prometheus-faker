@@ -24,14 +24,12 @@
 
 serverUrl=http://ixortalk-gateway:8888
 
-CLIENT_ID=ixortalkOAuthClient
-CLIENT_SECRET=ixortalkOAuthClientSecret
-
 ASSET_HOSTNAME=${1}
 ASSET_PORT=${2}
 
+CREDS=`curl $IXORTALK_CONFIG_SERVER_PATH/oauth2.txt`
 
-RESP=`curl -X POST -u ${CLIENT_ID}:${CLIENT_SECRET} -H "Content-Type: application/x-www-form-urlencoded" -d 'grant_type=client_credentials' "${serverUrl}/uaa/oauth/token"`
+RESP=`curl -X POST -u ${CREDS} -H "Content-Type: application/x-www-form-urlencoded" -d 'grant_type=client_credentials' "${serverUrl}/uaa/oauth/token"`
 BEARER_TOKEN=`echo ${RESP:17:36}`
 
 ASSETS_LENGTH=`curl -H "Authorization: Bearer $BEARER_TOKEN" ${serverUrl}/assetmgmt/assets/search/property/assetId/$ASSET_HOSTNAME | jqn --color false 'size'`
