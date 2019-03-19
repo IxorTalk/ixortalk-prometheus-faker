@@ -27,13 +27,16 @@ serverUrl=http://ixortalk-gateway:8888
 ASSET_HOSTNAME=${1}
 ASSET_PORT=${2}
 
-CREDS=`curl $IXORTALK_CONFIG_SERVER_PATH/oauth2.txt`
+echo "Retrieving creds from $IXORTALK_CONFIG_SERVER_PATH/oauth2.txt"
+CREDS=`curl ${IXORTALK_CONFIG_SERVER_PATH}/oauth2.txt`
 
+echo "Retrieving token using ${CREDS} from ${serverUrl}/uaa/oauth/token"
 RESP=`curl -X POST -u ${CREDS} -H "Content-Type: application/x-www-form-urlencoded" -d 'grant_type=client_credentials' "${serverUrl}/uaa/oauth/token"`
+
+echo "Found RESP = $RESP"
 BEARER_TOKEN=`echo ${RESP:17:36}`
 
 ASSETS_LENGTH=`curl -H "Authorization: Bearer $BEARER_TOKEN" ${serverUrl}/assetmgmt/assets/search/property/assetId/$ASSET_HOSTNAME | jqn --color false 'size'`
-
 echo "Found ASSETS_LENGTH [$ASSETS_LENGTH]"
 
 if [ $ASSETS_LENGTH -eq 0 ]; then
