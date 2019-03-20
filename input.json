@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "gauge_constant": {
+      "enabled": true,
+      "type": "ConstantValueGenerator",
+      "props": {
+        "interval": 1,
+        "constantValue": 10
+      }
+    },
+    "gauge_sinwave": {
+      "enabled": true,
+      "type": "SinWaveValueGenerator",
+      "props": {
+        "interval": 1
+      }
+    },
+    "gauge_random": {
+      "enabled": true,
+      "type": "RandomValueGenerator",
+      "props": {
+        "from": 1,
+        "to": 100
+      }
+    }
+  }
+}
