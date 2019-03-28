@@ -36,7 +36,9 @@
     <description>IxorTalk docker for Prometheus Fake Data</description>
 
     <scm>
-        <connection>scm:git:git@bitbucket.org:ixorcvba/ixortalk.prometheus.faker</connection>
+        <connection>scm:git:git@github.com:ixortalk/ixortalk-prometheus-faker.git</connection>
+        <developerConnection>scm:git:git@github.com:ixortalk/ixortalk-prometheus-faker.git</developerConnection>
+        <url>https://github.com/ixortalk/ixortalk-prometheus-faker/tree/master</url>
         <tag>HEAD</tag>
     </scm>
 
