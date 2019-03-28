@@ -28,7 +28,7 @@
 
     <groupId>com.ixortalk</groupId>
     <artifactId>ixortalk-prometheus-faker</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>prometheus-faker</name>
@@ -39,7 +39,7 @@
         <connection>scm:git:git@github.com:ixortalk/ixortalk-prometheus-faker.git</connection>
         <developerConnection>scm:git:git@github.com:ixortalk/ixortalk-prometheus-faker.git</developerConnection>
         <url>https://github.com/ixortalk/ixortalk-prometheus-faker/tree/master</url>
-        <tag>HEAD</tag>
+        <tag>ixortalk-prometheus-faker-1.0.1</tag>
     </scm>
 
     <distributionManagement>
